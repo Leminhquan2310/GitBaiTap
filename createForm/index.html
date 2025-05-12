@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORM</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        width: 500px;
+        margin: auto;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="1">
+      <h2>Order Form</h2>
+      <p>What would you like to buy?</p>
+      <select style="width: 200px">
+        <option value="  ">A</option>
+        <option>B (+ 0.5$)</option>
+        <option>C (+ 0.5$)</option>
+      </select>
+      <br />
+      <div><input type="radio" name="rd" id="" />1 - $10</div>
+      <div><input type="radio" name="rd" id="" />2 - $20</div>
+      <div><input type="radio" name="rd" id="" />3 - $25</div>
+
+      <p>Name <span style="color: red">*</span></p>
+      <div style="display: flex">
+        <input
+          type="text"
+          style="width: 200px; margin-right: 10px"
+          name="name"
+          placeholder="FirstName"
+        />
+        <input
+          placeholder="LastName"
+          type="text"
+          style="width: 200px"
+          name="name"
+        />
+      </div>
+
+      <p>Email</p>
+      <input type="email" name="email" />
+
+      <p for="phoneNumber">Phone Number</p>
+      <div style="display: flex">
+        <input type="text" style="width: 80px" name="phoneNumber" />-
+        <input type="text" style="width: 80px" name="phoneNumber" />-
+        <input type="text" style="width: 80px" name="phoneNumber" />
+      </div>
+      <br />
+      <input type="submit" style="width: 100px" value="Submit" />
+    </form>
+  </body>
+</html>
