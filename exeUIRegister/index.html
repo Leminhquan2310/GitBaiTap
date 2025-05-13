@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise UI Register</title>
+    <style>
+      div {
+        width: 200px;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <form
+      action="http://demo.codegym.vn/6/registration_form/register.php"
+      method="post"
+    >
+      <div>
+        <label for="name">Họ và Tên</label>
+        <input type="text" id="name" name="name" />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
+      <div>
+        <label for="phone">Số điện thoại</label>
+        <input type="text" id="phone" name="phone" />
+      </div>
+      <div>
+        Giới tính <br />
+        <input type="radio" name="gender" value="Nam" />
+        <label for="gender">Nam</label>
+        <input type="radio" name="gender" value="Nữ" />
+        <label for="gender">Nữ</label>
+      </div>
+      <div><input type="submit" value="Đăng ký" /></div>
+    </form>
+  </body>
+</html>
