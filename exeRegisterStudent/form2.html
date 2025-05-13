@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise UI Register Student</title>
+    <style>
+      .form {
+        width: 1000px;
+        margin: auto;
+        background-color: blanchedalmond;
+        min-height: 50vh;
+      }
+      table {
+        width: 700px;
+      }
+      .title {
+        color: blue;
+        padding: 10px;
+      }
+      .textbox {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form">
+      <form>
+        <h1 style="color: blue; background-color: aquamarine; padding: 10px">
+          ĐĂNG KÝ HỌC VIÊN
+        </h1>
+        <table>
+          <colgroup>
+            <col style="width: 20%" />
+          </colgroup>
+          <tr>
+            <td><label class="title" for="fullname">Họ và Tên</label></td>
+            <td><input class="textbox" type="text" name="fullname" /></td>
+          </tr>
+          <tr>
+            <td><label class="title" for="birth">Ngày sinh</label></td>
+            <td><input class="textbox" type="text" name="birth" /></td>
+          </tr>
+          <tr>
+            <td><label class="title" for="gender">Giới tính</label></td>
+            <td>
+              <input class="" type="radio" name="gender" value="Nam" />
+              <label for="gender">Nam</label>
+              <input class="" type="radio" name="gender" value="Nữ" />
+              <label for="gender">Nữ</label>
+            </td>
+          </tr>
+          <tr>
+            <td><label class="title" for="address">Địa chỉ</label></td>
+            <td>
+              <textarea
+                name="address"
+                id="address"
+                cols="30"
+                rows="5"
+              ></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td><label class="title" for="class">Lớp</label></td>
+            <td>
+              <select style="padding: 5px" name="class" id="class">
+                <option>-- Chọn lớp --</option>
+                <option value="Java">Java</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Python">Python</option>
+                <option value="Javascript">Javascript</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label class="title" for="email">Email</label></td>
+            <td><input class="textbox" type="text" name="email" /></td>
+          </tr>
+          <tr>
+            <td><label class="title" for="phone">Điện thoại</label></td>
+            <td><input class="textbox" type="text" name="phone" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input style="padding: 5px" type="submit" value="Đăng ký" />
+              <input style="padding: 5px" type="reset" value="Nhập lại" />
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </body>
+</html>
