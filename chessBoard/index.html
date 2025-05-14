@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chess Board</title>
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      table {
+        background-color: orange;
+      }
+
+      td {
+        text-align: center;
+        width: 50px;
+        height: 50px;
+      }
+      th {
+        height: 50px;
+        border: none;
+        font-size: 18px;
+      }
+      td:nth-child(1) {
+        border: none;
+        text-align: right;
+        padding-right: 10px;
+      }
+      td.le:nth-child(even) {
+        background-color: #333;
+      }
+      td.le:nth-child(odd) {
+        background-color: #fff;
+      }
+      td.chan:nth-child(odd) {
+        background-color: #333;
+      }
+      td.chan:nth-child(even) {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse">
+      <tr>
+        <th></th>
+        <th>1</th>
+        <th>2</th>
+        <th>3</th>
+        <th>4</th>
+        <th>5</th>
+        <th>6</th>
+        <th>7</th>
+        <th>8</th>
+      </tr>
+      <tr>
+        <td>A</td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+      </tr>
+      <tr>
+        <td>C</td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+        <td class="le"></td>
+      </tr>
+      <tr>
+        <td>H</td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+        <td class="chan"></td>
+      </tr>
+    </table>
+  </body>
+</html>
