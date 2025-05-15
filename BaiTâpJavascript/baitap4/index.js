@@ -7,8 +7,6 @@ inputHeight = prompt("Enter the Height");
 let width = parseInt(inputWidth);
 let height = parseInt(inputHeight);
 
-let $name;
-
 let area = width * height;
 
 document.write("The area is: " + area);
