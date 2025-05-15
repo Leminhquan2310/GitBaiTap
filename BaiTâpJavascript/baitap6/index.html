@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: space-evenly;
+        width: 700px;
+      }
+
+      select,
+      input {
+        width: 150px;
+        padding: 5px;
+      }
+
+      button {
+        margin: 0 10px;
+        width: 100px;
+        height: 30px;
+        margin-top: 60px;
+        background-color: darkorchid;
+        color: #fff;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+      }
+
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div style="text-align: center">
+        <h4>Amount</h4>
+        <input id="amount" name="amount" type="number" />
+      </div>
+      <div style="text-align: center">
+        <h4>From Currency</h4>
+        <select name="fromCurrency" id="fromCurrency">
+          <option value="vnd">VietName</option>
+          <option value="usd">USD</option>
+        </select>
+      </div>
+      <div style="text-align: center">
+        <h4>To Currency</h4>
+        <select name="toCurrency" id="toCurrency">
+          <option value="usd">USD</option>
+          <option value="vnd">VietName</option>
+        </select>
+      </div>
+      <button onclick="convert()">Convert</button>
+    </div>
+    <p id="result">s</p>
+
+    <script src="index.js"></script>
+  </body>
+</html>
