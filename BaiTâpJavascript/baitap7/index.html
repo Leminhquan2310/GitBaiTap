@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div style="margin: 10px">
+      <input type="number" id="n1" />
+      <input type="number" id="n2" />
+    </div>
+    <div style="margin: 10px">
+      <button onclick="calculator('+')">Addition(+)</button>
+      <button onclick="calculator('-')">Subtraction(-)</button>
+      <button onclick="calculator('*')">Multiplication(x)</button>
+      <button onclick="calculator('/')">Division(/)</button>
+    </div>
+
+    <h1 id="result"></h1>
+
+    <script>
+      function calculator(i) {
+        let n1 = parseInt(document.getElementById("n1").value);
+        let n2 = parseInt(document.getElementById("n2").value);
+        let result;
+
+        switch (i) {
+          case "+":
+            result = n1 + n2;
+            break;
+          case "-":
+            result = n1 - n2;
+            break;
+          case "*":
+            result = n1 * n2;
+            break;
+          case "/":
+            result = n1 / n2;
+            break;
+          default:
+            result;
+        }
+
+        document.getElementById("result").innerHTML = "Result: " + result;
+      }
+    </script>
+  </body>
+</html>

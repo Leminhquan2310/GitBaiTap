@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        margin-top: 50px;
+        background-color: aqua;
+      }
+
+      .container {
+        width: 800px;
+        padding: 20px;
+        height: fit-content;
+        background-color: #fff;
+      }
+
+      input {
+        width: calc(100% - 12px);
+        padding: 10px;
+        font-size: 30px;
+        text-align: right;
+        direction: ltr;
+      }
+
+      table {
+        width: 100%;
+      }
+
+      td,
+      th {
+        width: 25%;
+        height: 50px;
+        text-align: center;
+        border: 5px solid #fff;
+        border-radius: 5px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      th {
+        background-color: #bbb;
+        font-weight: normal;
+      }
+
+      th:hover {
+        background-color: #aaa;
+      }
+
+      td {
+        background-color: #eee;
+        font-weight: 600;
+      }
+
+      td:hover {
+        background-color: #ddd;
+      }
+
+      td:last-child {
+        background-color: #bbb;
+      }
+      td:last-child:hover {
+        background-color: #aaa;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <div class="container">
+        <input id="logic" type="text" value="0" oninput="changeMath()" />
+        <table>
+          <tr>
+            <th onclick="getMath('(')">(</th>
+            <th onclick="getMath(')')">)</th>
+            <th onclick="getMath('%')">%</th>
+            <th onclick="reset()">AC</th>
+          </tr>
+          <tr>
+            <td onclick="getMath('7')">7</td>
+            <td onclick="getMath('8')">8</td>
+            <td onclick="getMath('9')">9</td>
+            <td onclick="getMath('/')">&divide;</td>
+          </tr>
+          <tr>
+            <td onclick="getMath('4')">4</td>
+            <td onclick="getMath('5')">5</td>
+            <td onclick="getMath('6')">6</td>
+            <td onclick="getMath('*')">x</td>
+          </tr>
+          <tr>
+            <td onclick="getMath('1')">1</td>
+            <td onclick="getMath('2')">2</td>
+            <td onclick="getMath('3')">3</td>
+            <td onclick="getMath('-')">-</td>
+          </tr>
+          <tr>
+            <td onclick="getMath('0')">0</td>
+            <td onclick="getMath('.')">.</td>
+            <td
+              onclick="check()"
+              style="background-color: blue; color: #fff; font-weight: bold"
+            >
+              =
+            </td>
+            <td onclick="getMath('+')">+</td>
+          </tr>
+        </table>
+      </div>
+    </center>
+
+    <script>
+      let math = "";
+
+      function changeMath() {
+        math = document.getElementById("logic").value;
+      }
+
+      function getMath(param) {
+        math = math + param;
+        document.getElementById("logic").value = math;
+        console.log(math);
+      }
+
+      function reset() {
+        math = "";
+        document.getElementById("logic").value = "0";
+      }
+
+      function check() {
+        math = eval(math);
+        document.getElementById("logic").value = math;
+      }
+    </script>
+  </body>
+</html>
