@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        color: blue;
+        width: 100%;
+      }
+      input {
+        width: 100%;
+        text-align: right;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td colspan="4">
+          <input id="data" value="0" readonly type="text" />
+        </td>
+      </tr>
+      <tr>
+        <td><button onclick="getMath(event)" value="1">1</button></td>
+        <td><button onclick="getMath(event)" value="2">2</button></td>
+        <td><button onclick="getMath(event)" value="3">3</button></td>
+        <td><button onclick="getMath(event)" value="+">+</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="getMath(event)" value="4">4</button></td>
+        <td><button onclick="getMath(event)" value="5">5</button></td>
+        <td><button onclick="getMath(event)" value="6">6</button></td>
+        <td><button onclick="getMath(event)" value="-">-</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="getMath(event)" value="7">7</button></td>
+        <td><button onclick="getMath(event)" value="8">8</button></td>
+        <td><button onclick="getMath(event)" value="9">9</button></td>
+        <td><button onclick="getMath(event)" value="x">x</button></td>
+      </tr>
+      <tr>
+        <td><button onclick="resetData()">C</button></td>
+        <td><button onclick="getMath(event)" value="0">0</button></td>
+        <td><button onclick="getResult()">=</button></td>
+        <td><button onclick="getMath(event)" value="/">/</button></td>
+      </tr>
+    </table>
+
+    <script>
+      let math = "";
+      function getMath(event) {
+        math += event.target.value;
+        document.getElementById("data").value = math;
+      }
+
+      function getResult() {
+        math = eval(math);
+        document.getElementById("data").value = math;
+      }
+
+      function resetData() {
+        document.getElementById("data").value = 0;
+        math = "";
+      }
+    </script>
+  </body>
+</html>
