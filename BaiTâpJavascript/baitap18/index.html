@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 50%;
+        box-shadow: 2px 3px 3px black;
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <img id="img1" onclick="changeImg(event)" src="" alt="" />
+      <img id="img2" src="" alt="" />
+      <img id="img3" src="" alt="" />
+      <img id="img4" src="" alt="" />
+      <img id="img5" src="" alt="" />
+    </center>
+
+    <script>
+      const listImg1 = [
+        "http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg",
+      ];
+      const listImg2 = [
+        "http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg",
+      ];
+      const listImg3 = [
+        "http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg",
+      ];
+      const listImg4 = [
+        "http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg",
+      ];
+      const listImg5 = [
+        "http://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg",
+        "http://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg",
+      ];
+
+      for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+        
+      }
+    //   let img1 = document.getElementById("img1");
+    //   img1.src = listImg1[Math.floor(Math.random() * 3)];
+    //   let img2 = document.getElementById("img2");
+    //   img2.src = listImg2[Math.floor(Math.random() * 3)];
+    //   let img3 = document.getElementById("img3");
+    //   img3.src = listImg3[Math.floor(Math.random() * 3)];
+    //   let img4 = document.getElementById("img4");
+    //   img4.src = listImg4[Math.floor(Math.random() * 3)];
+    //   let img5 = document.getElementById("img5");
+    //   img5.src = listImg5[Math.floor(Math.random() * 3)];
+
+      function changeImg(event) {
+        event.target.src = "ll";
+      }
+    </script>
+  </body>
+</html>

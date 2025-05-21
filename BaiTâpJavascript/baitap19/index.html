@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Do you love me ?</h1>
+    <button onclick="alert('<3')">Yes</button>
+    <button id="btnNo" style="position: absolute" onmouseover="moveBtn()">
+      No
+    </button>
+
+    <script>
+      function moveBtn() {
+        let top = Math.random() * window.innerHeight;
+        let left = Math.random() * window.innerWidth;
+
+        document.getElementById("btnNo").style.top = top + "px";
+        document.getElementById("btnNo").style.left = left + "px";
+      }
+    </script>
+  </body>
+</html>
