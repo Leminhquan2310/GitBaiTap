@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập cấu trúc điều kiện 01 - Bài 5</title>
+  </head>
+  <body>
+    <script>
+      let diemKt = +prompt("Nhập điểm kiểm tra");
+      let diemGK = +prompt("Nhập điểm giữa kỳ");
+      let diemCK = +prompt("Nhập điểm cuối kỳ");
+
+      let diemTrungBinh = diemCK * 0.5 + diemGK * 0.4 + diemKt * 0.1;
+      if (diemTrungBinh < 5) {
+        alert("Yếu " + diemTrungBinh);
+      } else if (diemTrungBinh >= 5 && diemTrungBinh < 7) {
+        alert("Trung bình " + diemTrungBinh);
+      } else if (diemTrungBinh >= 7 && diemTrungBinh < 8) {
+        alert("Khá " + diemTrungBinh);
+      } else if (diemTrungBinh >= 8 && diemTrungBinh <= 10) {
+        alert("Giỏi " + diemTrungBinh);
+      }
+    </script>
+  </body>
+</html>
