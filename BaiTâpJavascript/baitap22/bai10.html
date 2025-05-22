@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập cấu trúc điều kiện 02 - Bài 10</title>
+  </head>
+  <body>
+    <script>
+      // Bài 10: Viết chương trình tính giá điện.
+      let kWh = +prompt("Nhập số kWh điện");
+      let unitPrice;
+      if (kWh > 0 && kWh <= 50) {
+        unitPrice = 1728;
+      } else if (kWh <= 100) {
+        unitPrice = 1786;
+      } else if (kWh <= 200) {
+        unitPrice = 2074;
+      } else if (kWh <= 300) {
+        unitPrice = 2612;
+      } else if (kWh <= 400) {
+        unitPrice = 2919;
+      } else if (kWh > 400) {
+        unitPrice = 3015;
+      } else {
+        alert("kWh không hợp lệ");
+      }
+
+      if (unitPrice) alert("Tiền điện tổng là: " + kWh * unitPrice);
+    </script>
+  </body>
+</html>

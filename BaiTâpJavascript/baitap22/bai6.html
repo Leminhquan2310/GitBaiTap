@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập cấu trúc điều kiện 02 - Bài 6</title>
+  </head>
+  <body>
+    <script>
+      // Bài 6: Giải phương trình bậc 1.
+      // Phương trình bậc nhất (bậc 1) là phương trình có dạng: 𝑎𝑥+𝑏=0
+      let a = +prompt("Nhập vào a");
+      let b = +prompt("Nhập vào b");
+      if (a === 0) {
+        if (b !== 0) {
+          alert("Phương trình vô nghiệm");
+        } else {
+          alert("Phương trình có vô số nghiệm");
+        }
+      } else {
+        const x = -b / a;
+        alert("Phương trình có nghiệm x là: " + x);
+      }
+    </script>
+  </body>
+</html>
