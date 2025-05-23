@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+  </head>
+  <body>
+    <script>
+      const n = +prompt("Nhập n số nguyên tố đầu tiên: ");
+      let count = 0;
+      let i = 2;
+      while (count < n) {
+        if (i == 2 || i == 3 || i == 5) {
+          document.write(i + "<br>");
+          count++;
+        } else if (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
+          document.write(i + "<br>");
+          count++;
+        }
+        i++;
+      }
+
+      //   const n = +prompt("Nhập n số nguyên tố đầu tiên: ");
+      //   let count = 0;
+      //   for (let i = 2; count < n; i++) {
+      //     if (i == 2 || i == 3 || i == 5) {
+      //       document.write(i + "<br>");
+      //       count++;
+      //     } else if (i % 2 !== 0 && i % 3 !== 0 && i % 5 !== 0) {
+      //       document.write(i + "<br>");
+      //       count++;
+      //     }
+      //   }
+    </script>
+  </body>
+</html>
