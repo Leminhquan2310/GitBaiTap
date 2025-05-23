@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau
+      //   function tamgiacvuong() {
+      //     for (let index = 1; index <= 5; index++) {
+      //       for (let j = 0; j < index; j++) {
+      //         document.write("*");
+      //       }
+      //       document.write("<br>");
+      //     }
+      //   }
+
+      //   function tamgiacvuong() {
+      //     for (let index = 5; index >= 1; index--) {
+      //       for (let j = 0; j < index; j++) {
+      //         document.write("*");
+      //       }
+      //       document.write("<br>");
+      //     }
+      //   }
+
+      //   function tamgiacvuong() {
+      //     for (let index = 1; index <= 5; index++) {
+      //       for (let a = 1; a <= 5 - index; a++) {
+      //         document.write("&nbsp;&nbsp;");
+      //       }
+      //       for (let j = 0; j < index; j++) {
+      //         document.write("*");
+      //       }
+      //       document.write("<br>");
+      //     }
+      //   }
+
+      function tamgiacvuong() {
+        for (let index = 5; index >= 1; index--) {
+          for (let a = 1; a <= 5 - index; a++) {
+            document.write("&nbsp;&nbsp;");
+          }
+          for (let j = 0; j < index; j++) {
+            document.write("*");
+          }
+          document.write("<br>");
+        }
+      }
+
+      tamgiacvuong();
+    </script>
+  </body>
+</html>

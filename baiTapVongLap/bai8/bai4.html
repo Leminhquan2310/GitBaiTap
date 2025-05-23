@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 4: In hình chữ nhật
+      for (let index = 0; index < 7; index++) {
+        document.write("*");
+        for (let j = 0; j < 20; j++) {
+          if (index == 0 || index == 6) {
+            document.write("*");
+          } else {
+            document.write("&nbsp;&nbsp;");
+          }
+        }
+        document.write("*");
+        document.write("<br>");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 5: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng.
+      let sotienbandau = +prompt("Nhập số tiền ban đầu");
+      let sothangvay = +prompt("Nhập số tháng vay");
+      let laisuat = +prompt("Nhập lãi suất hàng tháng (%)");
+      let tongtien = sotienbandau;
+      let tongtienlai = 0;
+      for (let i = 1; i <= sothangvay; i++) {
+        tongtien = tongtien + Math.floor((tongtien / 100) * laisuat);
+      }
+      alert(
+        "Tiền lãi sau " + sothangvay + " tháng là: " + (tongtien - sotienbandau)
+      );
+      alert("Tổng tiền nhận về là: " + tongtien);
+    </script>
+  </body>
+</html>

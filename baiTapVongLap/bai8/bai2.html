@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 2: Tính giai thừa của một số nguyên dương
+      let a = +prompt("Nhập vào số nguyên cần tính giai thừa");
+      let result = a;
+      for (let index = a - 1; index >= 1; index--) {
+        console.log(result);
+
+        result = result * index;
+      }
+      alert("Giai thừa = " + result);
+    </script>
+  </body>
+</html>
