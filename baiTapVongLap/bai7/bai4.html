@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+      let a = 0;
+      let b = 1;
+      for (let index = 0; index < 20; index++) {
+        if (a % 5 == 0 && a !== 0) {
+          alert("Số đầu tiên chia hết cho 5: " + a);
+          break;
+        }
+        let tam = a + b;
+        a = b;
+        b = tam;
+      }
+    </script>
+  </body>
+</html>

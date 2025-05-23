@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 6: Tính tổng của 30 số chia hết cho 7 đầu tiên trong các số tự nhiên.
+      let count = 0;
+      let sum = 0;
+      for (let index = 0; count < 30; index++) {
+        if (index % 7 == 0 && index != 0) {
+          sum += index;
+          count++;
+        }
+      }
+      alert(sum);
+    </script>
+  </body>
+</html>

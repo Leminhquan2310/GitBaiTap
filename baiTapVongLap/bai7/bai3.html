@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập vòng lặp 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
+      let a = 0;
+      let b = 1;
+      for (let index = 0; index < 20; index++) {
+        document.write(a + "<br>");
+        let tam = a + b;
+        a = b;
+        b = tam;
+      }
+    </script>
+  </body>
+</html>
