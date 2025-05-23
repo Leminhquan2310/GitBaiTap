@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tạo và thao tác với mảng</title>
+  </head>
+  <body>
+    <input type="text" id="txtValue" />
+    <input
+      type="button"
+      id="btnAdd"
+      value="Add"
+      onclick="add_element_to_array();"
+    />
+    <input
+      type="button"
+      id="btnDisplay"
+      value="Display"
+      onclick="display_array();"
+    />
+    <div id="result"></div>
+
+    <script>
+      let x = 0;
+      let array = [];
+
+      function add_element_to_array() {
+        let data = document.getElementById("txtValue");
+        array.push(data.value);
+        alert(
+          "Element: " + data.value + " Added at index " + (array.length - 1)
+        );
+        data.value = "";
+      }
+
+      function display_array() {
+        const result = document.getElementById("result");
+        let html = "";
+        array.forEach(function (item, index) {
+          html += "Element: " + index + " = " + item + "<br>";
+        });
+        result.innerHTML = html;
+      }
+    </script>
+  </body>
+</html>
