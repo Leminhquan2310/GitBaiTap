@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sinh bảng cửu chương</title>
+  </head>
+  <body>
+    <table
+      id="table"
+      border="1"
+      style="border-collapse: collapse; width: 800px"
+    ></table>
+
+    <script>
+      let table = document.getElementById("table");
+      let sout = "";
+      for (let i = 1; i <= 9; i++) {
+        sout = sout + "<tr>";
+        for (let j = 2; j <= 9; j++) {
+          sout = sout + "<td>" + j + "x" + i + "=" + j * i + "</td>";
+        }
+        sout = sout + "</tr>";
+      }
+      table.innerHTML = sout;
+    </script>
+  </body>
+</html>
