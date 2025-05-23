@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sử dụng vòng lặp lồng nhau</title>
+  </head>
+  <body>
+    <table id="data" border="1" style="border-collapse: collapse"></table>
+
+    <script>
+      let table = document.getElementById("data");
+      let html = "";
+      //   for (let index = 1; index <= 10; index++) {
+      //     html = html + "<tr>";
+      //     for (let j = 1; j <= 10; j++) {
+      //       html = html + "<td>" + j * index + "</td>";
+      //     }
+      //     html = html + "</tr>";
+      //   }
+      //   table.innerHTML = html;
+
+      let i = 1;
+      while (i <= 10) {
+        html = html + "<tr>";
+        let j = 1;
+        while (j <= 10) {
+          html = html + "<td>" + j * i + "</td>";
+          j++;
+        }
+        html = html + "</tr>";
+        i++;
+      }
+      table.innerHTML = html;
+    </script>
+  </body>
+</html>
