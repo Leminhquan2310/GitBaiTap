@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+  </head>
+  <body>
+    <center>
+      <h1>Type anything slowly</h1>
+      <textarea
+        oninput="changeKey(event)"
+        name="text"
+        id="text"
+        cols="50"
+        rows="10"
+      ></textarea>
+    </center>
+
+    <script>
+      let data = "Tôi là một đồ ngốc!!";
+      let newArr = data.split("");
+      let index = 0;
+      let html = "";
+      function changeKey(e) {
+        if (index > newArr.length - 1) {
+          e.target.value = "";
+          index = 0;
+          html = "";
+        } else if (e.key !== "Backspace") {
+          html += newArr[index];
+          e.target.value = html;
+          index++;
+        }
+      }
+    </script>
+  </body>
+</html>
