@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+  </head>
+  <body>
+    <script>
+      let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      let LOWER = "abcdefghijklmnopqrstuvwxyz";
+
+      let data = prompt("Nhập vào một chuỗi");
+      let newData = "";
+      for (let i = 0; i < data.length; i++) {
+        let indexU = UPPER.indexOf(data[i]);
+        let indexL = LOWER.indexOf(data[i]);
+        if (indexU > -1) {
+          newData += data[i].toLowerCase();
+        } else if (indexL > -1) {
+          newData += data[i].toUpperCase();
+        } else {
+          newData += data[i];
+        }
+      }
+      alert(newData);
+    </script>
+  </body>
+</html>
