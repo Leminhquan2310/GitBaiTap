@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Từ điển</title>
+  </head>
+  <body>
+    <input type="text" id="search" />
+    <button onclick="search()">Tìm kiếm</button>
+
+    <script>
+      let english = ["love", "car", "phone", "pen"];
+      let vietname = ["yêu", "xe hơi", "điện thoại", "bút"];
+
+      function search() {
+        let data = document.getElementById("search").value;
+        let index = -1;
+        for (let i = 0; i < english.length; i++) {
+          if (data === english[i]) {
+            index = i;
+          }
+        }
+        if (index > -1) {
+          alert(
+            'Nghĩa của "' + data + '" trong tiếng việt là: ' + vietname[index]
+          );
+        } else {
+          alert("Không tìm thấy");
+        }
+      }
+    </script>
+  </body>
+</html>
