@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <style>
+      center {
+        margin-top: 100px;
+      }
+      td {
+        width: 33%;
+        height: 33%;
+        text-align: center;
+        font-size: 70px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <table
+        id="boardData"
+        border="1"
+        style="border-collapse: collapse; width: 400px; height: 400px"
+      >
+        <caption id="player">
+          HI
+        </caption>
+      </table>
+    </center>
+
+    <script>
+      let nguoichoi = 1;
+      let board = [];
+      for (let i = 0; i < 3; i++) {
+        board[i] = [0, 0, 0];
+      }
+
+      function checkResult() {
+        let status = "";
+
+        // check hàng
+        board.map(function (item) {
+          if (item[0] == item[1] && item[0] == item[2] && item[0] != 0) {
+            status = "WIN";
+            return status;
+          }
+        });
+
+        // check cột
+        let countHeight = 0;
+        for (let i = 0; i < board.length; i++) {
+          for (let j = 0; j < board.length; j++) {
+            if (board[j][i] == nguoichoi) {
+              countHeight++;
+            } else {
+              countHeight = 0;
+              break;
+            }
+          }
+          if (countHeight == 3) {
+            status = "WIN";
+            return status;
+          } else {
+            countHeight = 0;
+          }
+        }
+
+        // check chéo
+        if (nguoichoi == board[1][1]) {
+          if (nguoichoi == board[0][0] && nguoichoi == board[2][2]) {
+            status = "WIN";
+            return status;
+          } else if (nguoichoi == board[0][2] && nguoichoi == board[2][0]) {
+            status = "WIN";
+            return status;
+          }
+        }
+
+        return status;
+      }
+
+      function reloadBoard() {
+        let html =
+          "<caption>" +
+          "Tới lượt: " +
+          (nguoichoi == 1 ? "X" : "O") +
+          "</caption>";
+        for (let i = 0; i < board.length; i++) {
+          html += "<tr>";
+          for (let j = 0; j < 3; j++) {
+            html += `<td style="color: ${
+              board[i][j] == 0 ? "" : board[i][j] == 1 ? "red" : "black"
+            }" onclick="checked('${i},${j}')" >${
+              board[i][j] == 0 ? "" : board[i][j] == 1 ? "X" : "O"
+            }</td>`;
+          }
+          html += "</tr>";
+        }
+        document.getElementById("boardData").innerHTML = html;
+      }
+
+      function checked(event) {
+        let [x, y] = event.split(",");
+        if (board[x][y] == 0) {
+          if (nguoichoi == 1) {
+            board[x][y] = 1;
+          } else {
+            board[x][y] = 2;
+          }
+          let result = checkResult();
+          if (result == "WIN") {
+            alert((nguoichoi == 1 ? "X" : "O") + " WIN");
+          }
+          nguoichoi = nguoichoi == 1 ? 2 : 1;
+          reloadBoard();
+        } else {
+          alert("Ô đã được chọn");
+        }
+      }
+
+      reloadBoard();
+    </script>
+  </body>
+</html>
