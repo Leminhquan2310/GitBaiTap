@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập mảng 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 6 Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V.
+      // Chương trình tìm xem V có nằm trong mảng không.
+      // Nếu V thuộc mảng, in ra: "V is in the array".
+      // Nếu không, in ra: "V is not in the array".
+
+      let array = [];
+      let index = 0;
+      while (index < 10) {
+        let number = +prompt("Nhập vào phần tử số nguyên thứ " + (index + 1));
+        if (Number.isInteger(number)) {
+          array.push(number);
+          index++;
+        } else {
+          alert("Phần tử không phải số nguyên");
+        }
+      }
+
+      let check = +prompt("Nhập vào số nguyên để check");
+      let valid = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (check === array[i]) {
+          valid++;
+        }
+      }
+
+      if (valid) {
+        alert(check + " is in the array");
+      } else {
+        alert(check + " is not in the array");
+      }
+    </script>
+  </body>
+</html>

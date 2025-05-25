@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập mảng 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 7: Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số nguyên V.
+      // Chương trình kiểm tra xem V có thuộc mảng đã cho không.
+      // Nếu V thuộc mảng, xóa V khỏi mảng (dịch các phần tử bên phải V sang vị trí của V và gán 0 cho phần tử cuối cùng của mảng).
+
+      let array = [2, 5, 33, 77, 3, 88, 0, 2, 1, 9];
+      let check = +prompt("Nhập vào một số nguyên để check");
+
+      let newArr = [];
+      let valid = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (check === array[i]) {
+          valid++;
+          continue;
+        }
+        newArr.push(array[i]);
+      }
+      if (valid) {
+        for (let i = 0; i < valid; i++) {
+          newArr.push(0);
+        }
+      }
+      alert(newArr);
+    </script>
+  </body>
+</html>

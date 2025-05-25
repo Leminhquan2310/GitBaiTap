@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập mảng 01</title>
+  </head>
+  <body>
+    <script>
+      // Bài 3: Viết chương trình khởi tạo một mảng số nguyên. Hiển thị giá trị lớn nhất trong mảng đó.
+      // In ra giá trị trung bình của các phần tử trong mảng.
+
+      let array = [2, 5, 33, 77, 3, 88, 0, 2, 1, 9];
+      let max = array[0];
+      let sum = 0;
+      for (let i = 0; i < array.length; i++) {
+        if (array[i] > max) {
+          max = array[i];
+        }
+        sum += array[i];
+      }
+
+      alert("Giá trị lớn nhất trong mảng là: " + max);
+      alert("Giá trị trung bình của các phần tử là: " + sum / array.length);
+    </script>
+  </body>
+</html>
