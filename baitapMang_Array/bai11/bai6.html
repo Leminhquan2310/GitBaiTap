@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập mảng 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 6: Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự '-' trong mảng và thay thế chúng bằng ký tự '_'.
+      let n = +prompt("Nhập vào độ dài mảng");
+      let arr = [];
+      for (let i = 0; i < n; i++) {
+        arr[i] = prompt("Nhập kí tự thứ " + (i + 1));
+      }
+
+      newArr = arr.map(function (item) {
+        if (item === "-") {
+          return "_";
+        } else {
+          return item;
+        }
+      });
+      document.write(newArr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập mảng 02</title>
+  </head>
+  <body>
+    <script>
+      // Bài 3: Viết chương trình khai báo một mảng ký tự và kích thước của mảng.
+      const arr = ["a", "3", "b", "5", "9", "x", "0"];
+      document.write("Kích thước mảng: " + arr.length + "<br>");
+      let countNumber = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (Number.isInteger(parseInt(arr[i]))) {
+          countNumber++;
+        }
+      }
+      document.write("Số lượng kí tự số: " + countNumber);
+    </script>
+  </body>
+</html>
