@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+  </head>
+  <body>
+    <script>
+      // Tính diện tích và chu vi hình tròn:
+      // Viết hàm tính diện tích hình tròn.
+      // Viết hàm tính chu vi hình tròn.
+      // Gọi và kiểm tra các hàm vừa viết.
+
+      let pi = 3.14159;
+
+      function circularAcreage(radius) {
+        return pi * radius * radius;
+      }
+      function circularPerimeter(radius) {
+        return 2 * pi * radius;
+      }
+
+      let radius = 10;
+      let acreage = circularAcreage(radius);
+      let perimeter = circularPerimeter(radius);
+      document.write("Diện tích hình tròn: " + acreage + "<br>");
+      document.write("Chu vi hình tròn: " + perimeter);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập tạo và sử dụng hàm 02</title>
+  </head>
+  <body>
+    <script>
+      // Kiểm tra ký tự trong mảng:
+      // Viết hàm nhận vào một mảng ký tự và một ký tự bất kỳ.
+      // Kiểm tra xem ký tự đó có nằm trong mảng hay không.
+      // Nếu có, trả về số lần xuất hiện; nếu không, trả về -1.
+
+      function checkString(string, key) {
+        let index = 0;
+        for (let i = 0; i < string.length; i++) {
+          if (string[i] === key) {
+            index++;
+          }
+        }
+        if (index) {
+          return index;
+        } else {
+          return -1;
+        }
+      }
+
+      let a = "Hello world!";
+      let keyCheck = "o";
+      let result = checkString(a, keyCheck);
+      if (result !== -1) {
+        document.write(keyCheck + " xuất hiện " + result + " lần trong mảng");
+      } else {
+        document.write(keyCheck + " không xuất hiện");
+      }
+    </script>
+  </body>
+</html>
