@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tìm giá trị nhỏ nhất của mảng</title>
+  </head>
+  <body>
+    <script>
+      arr1 = [3, 5, 1, 8, -3, 7, 8];
+      arr2 = [7, 12, 6, 9, 20, 56, 89];
+      arr3 = [];
+      arr4 = [0, 0, 0, 0, 0, 0];
+
+      function minArray(array) {
+        let min = array[0];
+        let = index = 0;
+        if (array.length == 0) {
+          return -1;
+        }
+        for (let i = 1; i < array.length; i++) {
+          if (array[i] < min) {
+            index = i;
+          }
+        }
+        return index;
+      }
+
+      console.log(minArray(arr1));
+      console.log(minArray(arr2));
+      console.log(minArray(arr3));
+      console.log(minArray(arr4));
+    </script>
+  </body>
+</html>
