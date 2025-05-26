@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luyện tập tạo và sử dụng hàm 01</title>
+  </head>
+  <body>
+    <input type="number" id="number" />
+    <button onclick="tang()">increment</button>
+    <h2 id="data"></h2>
+
+    <script>
+      // Bài 2: Tạo hàm nhận vào một đối số dạng số, tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng.
+      // Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.
+
+      function increment(number) {
+        return number + 1;
+      }
+
+      function tang() {
+        let value = document.getElementById("number").value;
+        let newValue = increment(parseInt(value));
+        document.getElementById("data").innerHTML = newValue;
+      }
+    </script>
+  </body>
+</html>
