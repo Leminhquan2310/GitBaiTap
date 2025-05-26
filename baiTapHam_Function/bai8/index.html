@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+    <style>
+      table {
+        width: 600px;
+      }
+
+      td {
+        height: 40px;
+        text-align: left;
+      }
+      tr:nth-child(odd) {
+        background-color: #ccc;
+      }
+      button {
+        width: 80px;
+        height: 40px;
+        background-color: rgb(3, 186, 55);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+      }
+      .add,
+      .edit {
+        width: 300px;
+        height: 100px;
+        background-color: #eee;
+        margin: 10px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      input {
+        padding: 10px;
+        margin-right: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table border="1" style="border-collapse: collapse" id="list"></table>
+    <div class="add">
+      <input placeholder="New product" type="text" id="inProduct" />
+      <button onclick="addNewProduct()">Thêm</button>
+    </div>
+    <div class="edit">
+      <input type="text" id="editProduct" />
+      <button onclick="updateNameProduct()">Sửa</button>
+    </div>
+
+    <script>
+      const phoneProducts = [
+        "iPhone 15 Pro Max",
+        "Samsung Galaxy S24 Ultra",
+        "Xiaomi 14",
+        "OPPO Find X7 Pro",
+        "Realme GT5",
+        "Vivo X100 Pro",
+        "Asus ROG Phone 8",
+        "Google Pixel 8 Pro",
+        "Sony Xperia 1 V",
+        "Nokia G60 5G",
+      ];
+
+      let indexEdit = -1;
+
+      function generateList() {
+        let html =
+          "<tr><th colspan='2'>Product name</th><th>" +
+          phoneProducts.length +
+          " product</th></tr>";
+        phoneProducts.forEach(function (value, index) {
+          html += "<tr>";
+          html += `<td>${index + 1}</td>
+          <td onClick="document.getElementById('editProduct').value = '${value}';indexEdit = ${index}">${value}</td>
+          <td onClick="removeProduct(${index})"><button>Xóa</button></td>`;
+        });
+        document.getElementById("list").innerHTML = html;
+      }
+
+      function addNewProduct() {
+        let product = document.getElementById("inProduct").value;
+        if (product) {
+          phoneProducts.push(product);
+          alert("Thêm thành công");
+          generateList();
+        } else {
+          alert("Nhập tên sản phẩm");
+        }
+      }
+
+      function updateNameProduct() {
+        let name = document.getElementById("editProduct").value;
+        phoneProducts[indexEdit] = name;
+        generateList();
+      }
+
+      function removeProduct(index) {
+        phoneProducts.splice(index, 1);
+        generateList();
+      }
+
+      generateList();
+    </script>
+  </body>
+</html>
