@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra từ đối xứng</title>
+  </head>
+  <body>
+    <script>
+      function isPalindrome(string) {
+        console.log(string);
+
+        let fir = string[0];
+        let last = string[string.length - 1];
+
+        if (fir !== last) {
+          return false;
+        }
+        if (string.length <= 1) {
+          return true;
+        }
+        return isPalindrome(string.slice(1, -1));
+      }
+
+      let a = "rotor";
+      let isPrime = isPalindrome(a); // true
+    </script>
+  </body>
+</html>
