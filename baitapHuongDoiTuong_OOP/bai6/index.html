@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xây dựng lớp mô tả điện thoại</title>
+    <style>
+      table {
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body style="display: flex; justify-content: space-around">
+    <div id="mobileA">
+      <h1>Mobile A</h1>
+      <input type="text" id="messageA" oninput="draftMessage(event)" />
+      <button onclick="sendMessage('mobileA')">Gửi tin nhắn</button>
+      <table border="1" style="border-collapse: collapse" id="inboxA"></table>
+    </div>
+    <br /><br />
+    <div id="mobileB">
+      <h1>Mobile B</h1>
+      <input type="text" id="messageB" oninput="draftMessage(event)" />
+      <button onclick="sendMessage('mobileB')">Gửi tin nhắn</button>
+      <table id="inboxB" border="1" style="border-collapse: collapse"></table>
+    </div>
+
+    <script>
+      function Mobile(battery) {
+        this.battery = battery > 100 ? 100 : battery < 0 ? 0 : battery;
+        this.isOn = false;
+        this.draftMessage = "";
+        this.inbox = [];
+        this.sentMessage = [];
+
+        this.decreaseBattery = function () {
+          this.battery--;
+        };
+
+        this.checkStatusTurnON = function () {
+          if (!isOn) return;
+          this.decreaseBattery();
+          return this.isOn;
+        };
+        this.turnOnPhone = function () {
+          this.isOn = true;
+        };
+        this.turnOffPhone = function () {
+          this.isOn = false;
+        };
+        this.charger = function () {
+          this.battery = 100;
+        };
+        this.typingMessage = function (message) {
+          if (!this.isOn) return;
+          this.decreaseBattery();
+          this.draftMessage = message;
+        };
+        this.sendMessage = function (phone) {
+          if (!this.isOn) return;
+          this.decreaseBattery();
+          phone.receiveMessage(this.draftMessage);
+          this.sentMessage.push(this.draftMessage);
+          this.draftMessage = "";
+        };
+        this.receiveMessage = function (message) {
+          if (!this.isOn) return;
+          this.decreaseBattery();
+          this.inbox.push(message);
+        };
+      }
+
+      let mobileA = new Mobile(90);
+      mobileA.turnOnPhone();
+      let mobileB = new Mobile(50);
+      mobileB.turnOnPhone();
+
+      function sendMessage(phone) {
+        if (phone === "mobileA") mobileA.sendMessage(mobileB);
+        if (phone === "mobileB") mobileB.sendMessage(mobileA);
+
+        showInbox();
+      }
+
+      function draftMessage(event) {
+        let id = event.target.id;
+        let message = document.getElementById(event.target.id).value;
+        if (id === "messageA") {
+          mobileA.typingMessage(message);
+        } else {
+          mobileB.typingMessage(message);
+        }
+      }
+
+      function showInbox() {
+        let inboxA = mobileA.inbox;
+        let sentA = mobileA.sentMessage;
+        let lengthForA =
+          inboxA.length > sentA.length ? inboxA.length : sentA.length;
+        let htmlA = "<tr><th>Inbox</th><th>Sent Message</th></tr>";
+        for (let i = 0; i < lengthForA; i++) {
+          htmlA +=
+            "<tr><td>" + inboxA[i] + "</td><td>" + sentA[i] + "</td></tr>";
+        }
+        document.getElementById("inboxA").innerHTML = htmlA;
+
+        // =============================
+
+        let inboxB = mobileB.inbox;
+        let sentB = mobileB.sentMessage;
+        let lengthForB =
+          inboxB.length > sentB.length ? inboxB.length : sentB.length;
+        let htmlB = "<tr><th>Inbox</th><th>Sent Message</th></tr>";
+        for (let i = 0; i < lengthForB; i++) {
+          htmlB +=
+            "<tr><td>" + inboxB[i] + "</td><td>" + sentB[i] + "</td></tr>";
+        }
+        document.getElementById("inboxB").innerHTML = htmlB;
+      }
+    </script>
+  </body>
+</html>
