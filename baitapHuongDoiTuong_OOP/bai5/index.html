@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Temperature(celsius) {
+        if (celsius > -273) {
+          this.celsius = celsius;
+        } else {
+          this.celsius = -273;
+        }
+        this.cToK = function () {
+          return this.celsius + 273.15;
+        };
+        this.cToF = function () {
+          return (this.celsius * 9) / 5 + 32;
+        };
+      }
+
+      let temperature = new Temperature(25);
+      document.write("K: " + temperature.cToK() + "<br>");
+      document.write("F: " + temperature.cToF());
+    </script>
+  </body>
+</html>
