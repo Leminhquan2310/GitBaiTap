@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Phát triển chương trình thể hiện sự tương tác giữa hai đối tượng: công tắc
+      và bóng đèn
+    </title>
+  </head>
+  <body>
+    <script>
+      function ElectricLamp(status) {
+        this.status = status;
+
+        this.turnOn = function () {
+          this.status = true;
+        };
+
+        this.turnOff = function () {
+          this.status = false;
+        };
+
+        this.getStatus = function () {
+          if (this.status) {
+            return "Bóng đèn đang bật";
+          } else {
+            return "Bóng đèn đang tắt";
+          }
+        };
+      }
+
+      function SwitchButton(status) {
+        this.status = status;
+        this.lamp = null;
+
+        this.connectToLamp = function (ElectricLamp) {
+          this.lamp = ElectricLamp;
+        };
+
+        this.switchToggle = function () {
+          this.status = !this.lamp.status;
+          if (this.status) {
+            this.lamp.turnOn();
+          } else {
+            this.lamp.turnOff();
+          }
+        };
+      }
+
+      let electricLamp = new ElectricLamp(false);
+      let switchButton = new SwitchButton(false);
+      document.write("Chưa kết nối bóng đèn" + "<br>");
+      document.write("Kết nối bóng đèn <br>");
+      switchButton.connectToLamp(electricLamp);
+      document.write(switchButton.lamp.getStatus() + "<br>");
+      document.write("bật/tắt 10 lần<br> ------------------- <br>");
+      for (let i = 0; i < 10; i++) {
+        document.write("Bật/tắt <br>");
+        switchButton.switchToggle();
+        document.write(switchButton.lamp.getStatus() + "<br>");
+      }
+    </script>
+  </body>
+</html>
