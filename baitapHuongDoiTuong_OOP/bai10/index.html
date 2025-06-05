@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phát triển ứng dụng nhỏ mô phỏng câu chuyện Adam và Eva</title>
+  </head>
+  <body>
+    <script>
+      function Apple() {
+        this.weight = 10;
+
+        this.decrease = function () {
+          if (this.weight > 0) this.weight--;
+        };
+        this.isEmpty = function () {
+          return this.getWeight() == 0 ? true : false;
+        };
+        this.getWeight = function () {
+          return this.weight;
+        };
+      }
+
+      function Human() {
+        this.setWeight = function (weight) {
+          this.weight = weight;
+        };
+
+        this.getWeight = function () {
+          return this.weight;
+        };
+
+        this.setName = function (name) {
+          this.name = name;
+        };
+
+        this.getName = function () {
+          return this.name;
+        };
+
+        this.isMale = function () {
+          return gender;
+        };
+
+        this.setGender = function (boolean) {
+          return (this.gender = boolean);
+        };
+
+        this.checkApple = function (apple) {
+          return apple.isEmpty();
+        };
+
+        this.eat = function (apple) {
+          if (!this.checkApple(apple)) {
+            apple.decrease();
+            let weight = this.getWeight() + 1;
+            this.setWeight(weight);
+          }
+        };
+
+        this.say = function (somethings) {
+          document.write(this.getName() + " " + somethings);
+        };
+      }
+
+      const apple = new Apple();
+      const human1 = new Human();
+      human1.setName("A-Dam");
+      human1.setGender(true);
+      human1.setWeight(50);
+      const human2 = new Human();
+      human2.setName("E-va");
+      human2.setGender(false);
+      human2.setWeight(45);
+
+      for (let i = 1; i <= 9; i++) {
+        if (apple.isEmpty()) {
+          break;
+        }
+        human1.say("Eat " + i + " time!<br>");
+        human1.eat(apple);
+        document.write(
+          "Weight " + human1.getName() + " now: " + human1.getWeight() + "<br>"
+        );
+        human2.say("Eat " + i + " time!<br>");
+        human2.eat(apple);
+        document.write(
+          "Weight " + human2.getName() + " now: " + human2.getWeight() + "<br>"
+        );
+        document.write("Weight apple: " + apple.getWeight() + "<br>");
+      }
+    </script>
+  </body>
+</html>
