@@ -25,11 +25,12 @@
         border-radius: 5px;
       }
       .add,
+      .search,
       .edit {
         width: 300px;
         height: 100px;
         background-color: #eee;
-        margin: 10px 0;
+        margin: 10px 10px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -42,68 +43,33 @@
   </head>
   <body>
     <table border="1" style="border-collapse: collapse" id="list"></table>
-    <div class="add">
-      <input placeholder="New product" type="text" id="inProduct" />
-      <button onclick="addNewProduct()">Thêm</button>
+    <div style="display: flex">
+      <div class="add">
+        <input placeholder="New product" type="text" id="newProduct" />
+        <button onclick="add()">Add</button>
+      </div>
+      <div class="search">
+        <input
+          type="text"
+          id="searchData"
+          oninput="search()"
+          placeholder="Search"
+        />
+      </div>
+      <div class="edit">
+        <input type="text" id="editProduct" placeholder="New product name" />
+        <button onclick="edit()">Update</button>
+      </div>
     </div>
-    <div class="edit">
-      <input type="text" id="editProduct" />
-      <button onclick="updateNameProduct()">Sửa</button>
-    </div>
 
-    <script>
-      const phoneProducts = [
-        "iPhone 15 Pro Max",
-        "Samsung Galaxy S24 Ultra",
-        "Xiaomi 14",
-        "OPPO Find X7 Pro",
-        "Realme GT5",
-        "Vivo X100 Pro",
-        "Asus ROG Phone 8",
-        "Google Pixel 8 Pro",
-        "Sony Xperia 1 V",
-        "Nokia G60 5G",
-      ];
-
-      let indexEdit = -1;
-
-      function generateList() {
-        let html =
-          "<tr><th colspan='2'>Product name</th><th>" +
-          phoneProducts.length +
-          " product</th></tr>";
-        phoneProducts.forEach(function (value, index) {
-          html += "<tr>";
-          html += `<td>${index + 1}</td>
-          <td onClick="document.getElementById('editProduct').value = '${value}';indexEdit = ${index}">${value}</td>
-          <td onClick="removeProduct(${index})"><button>Xóa</button></td>`;
-        });
-        document.getElementById("list").innerHTML = html;
-      }
-
-      function addNewProduct() {
-        let product = document.getElementById("inProduct").value;
-        if (product) {
-          phoneProducts.push(product);
-          alert("Thêm thành công");
-          generateList();
-        } else {
-          alert("Nhập tên sản phẩm");
-        }
-      }
-
-      function updateNameProduct() {
-        let name = document.getElementById("editProduct").value;
-        phoneProducts[indexEdit] = name;
-        generateList();
-      }
-
-      function removeProduct(index) {
-        phoneProducts.splice(index, 1);
-        generateList();
-      }
-
-      generateList();
-    </script>
+    <h2>Display All Product</h2>
+    <table border="1">
+      <tr>
+        <th>Product Name</th>
+        <th colspan="2">Action</th>
+      </tr>
+      <tbody id="data"></tbody>
+    </table>
+    <script src="index.js"></script>
   </body>
 </html>
