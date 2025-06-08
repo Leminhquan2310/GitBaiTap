@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class TiVi {
+        channel;
+        volume;
+        onTiVi;
+        listChannel = [
+          "VTV1",
+          "VTV2",
+          "VTV3",
+          "VTV4",
+          "VTV5",
+          "VTV6",
+          "VTV7",
+          "VTV8",
+          "VTV9",
+        ];
+
+        constructor() {
+          this.channel = 0;
+          this.volume = 50;
+          this.onTiVi = false;
+        }
+
+        turnOff = () => {
+          this.onTiVi = false;
+        };
+        turnOn = () => {
+          this.onTiVi = true;
+        };
+
+        changeChannel = (channelKey) => {
+          if (!this.onTiVi) return;
+          if (channelKey > this.listChannel.length) {
+            this.channel = 0;
+          } else {
+            this.channel = channelKey - 1;
+          }
+        };
+
+        changeVolume = (key) => {
+          if (!this.onTiVi) return;
+          if (key == "increase") {
+            this.volume++;
+          }
+
+          if (key == "decrease") {
+            this.volume--;
+          }
+        };
+
+        getChannel = () => {
+          return this.listChannel[this.channel];
+        };
+
+        getVolume = () => {
+          return this.volume;
+        };
+
+        getStatus = () => {
+          return this.onTiVi ? "On" : "Off";
+        };
+
+        toString = () => {
+          return (
+            "Channel: " +
+            this.getChannel() +
+            " | Volume: " +
+            this.getVolume() +
+            " | Status: " +
+            this.getStatus() +
+            "<br>"
+          );
+        };
+      }
+
+      class Remote {
+        INCREASE = "increase";
+        DECREASE = "decrease";
+
+        constructor() {}
+
+        turnOnTiVi = (tiVi) => {
+          tiVi.turnOn();
+        };
+
+        turnOffTiVi = (tiVi) => {
+          tiVi.turnOff();
+        };
+
+        changeChannel = (tiVi, channel) => {
+          tiVi.changeChannel(channel);
+        };
+
+        changeVolume = (tiVi, key) => {
+          tiVi.changeVolume(key);
+        };
+      }
+
+      let tiVi = new TiVi();
+      let remote = new Remote(tiVi);
+      document.write(tiVi.toString());
+      document.write("Bật ti-vi<br>");
+      remote.turnOnTiVi(tiVi);
+      document.write(tiVi.toString());
+      document.write("Chuyển kênh 7<br>");
+      remote.changeChannel(tiVi, 7);
+      document.write(tiVi.toString());
+      document.write("Chuyển kênh 3<br>");
+      remote.changeChannel(tiVi, 3);
+      document.write(tiVi.toString());
+      document.write("Tăng âm lượng<br>");
+      remote.changeVolume(tiVi, remote.INCREASE);
+      document.write(tiVi.toString());
+      document.write("Tăng âm lượng<br>");
+      remote.changeVolume(tiVi, remote.INCREASE);
+      document.write(tiVi.toString());
+      document.write("Tắt Ti-Vi<br>");
+      remote.turnOffTiVi(tiVi);
+      document.write(tiVi.toString());
+    </script>
+  </body>
+</html>
