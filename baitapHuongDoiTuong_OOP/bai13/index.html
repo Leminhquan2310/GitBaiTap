@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Phát triển ứng dụng mô phỏng lại quá trình mèo bắt chuột và ăn chuột.
+    </title>
+  </head>
+  <body>
+    <script>
+      class Mouse {
+        name;
+        weight;
+        speed;
+        isDie;
+
+        constructor(name, weight, speed, isDie) {
+          this.name = name;
+          this.weight = weight;
+          this.speed = speed;
+          this.isDie = false;
+        }
+
+        say() {
+          document.write("Chit Chit!");
+        }
+      }
+
+      class Cat {
+        name;
+        weight;
+        masSpeed;
+
+        constructor(name, weight, masSpeed) {
+          this.name = name;
+          this.weight = weight;
+          this.masSpeed = masSpeed;
+        }
+
+        setWeight = (mouseWeight) => {
+          this.weight += mouseWeight;
+        };
+
+        say = () => {
+          document.write("Meo Meo!");
+        };
+
+        catchMouse = (mouse) => {
+          if (this.masSpeed > mouse.speed) {
+            alert("Mèo bắt được chuột");
+          } else {
+            alert("Mèo không bắt được chuột");
+          }
+        };
+
+        eatMouse = (mouse) => {
+          if (!mouse.isDie) {
+            this.setWeight(mouse.weight);
+            alert("Mèo Ăn chuột");
+          } else {
+            alert("Mèo không ăn được chuột");
+          }
+        };
+      }
+
+      let mouse = new Mouse("Jerry", 10, 50);
+      let cat = new Cat("Tom", 20, 100);
+      document.write("Weight mouse: " + mouse.weight + "<br>");
+      document.write("Weight cat: " + cat.weight + "<br>");
+
+      document.write("Mouse is live: " + !mouse.isDie + "<br>");
+      document.write("Cat catch mouse <br>");
+      cat.catchMouse(mouse);
+      cat.eatMouse(mouse);
+      document.write("Weight cat: " + cat.weight);
+    </script>
+  </body>
+</html>
