@@ -21,6 +21,12 @@
     <script src="Board.js"></script>
     <script src="Ball.js"></script>
     <script src="Bar.js"></script>
-    <script src="index.js"></script>
+    <script src="Game.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        let game = new Game("board");
+        game.start();
+      });
+    </script>
   </body>
 </html>

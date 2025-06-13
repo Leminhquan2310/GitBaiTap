@@ -1,11 +1,14 @@
 class Ball {
-  constructor(x, y, radius, dx, dy, speed) {
+  constructor(x, y, radius, dx, dy) {
     this.x = x;
     this.y = y;
     this.radius = radius;
     this.dx = dx;
     this.dy = dy;
-    this.speed = speed;
+    this.score = 0;
+    this.countScore = setInterval(() => {
+      this.score++;
+    }, 3000);
   }
 
   drawBall(ctx) {
@@ -13,6 +16,14 @@ class Ball {
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fillStyle = "red";
     ctx.fill();
+  }
+
+  drawScore(ctx) {
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + this.score, 20, 30);
+  }
+
+  move() {
     this.x += this.dx;
     this.y += this.dy;
   }
@@ -29,6 +40,11 @@ class Ball {
         this.x < bar.x + bar.length)
     ) {
       this.dy = -this.dy;
+      if (bar.dx > 0) {
+        this.dx += 1;
+      } else if (bar.dx < 0) {
+        this.dx -= 1;
+      }
     }
     if (this.y + this.radius >= canvas.height) {
       this.endGame();
@@ -38,6 +54,17 @@ class Ball {
   endGame() {
     this.dx = 0;
     this.dy = 0;
-    alert("Game Over!");
+    clearInterval(this.countScore);
+    let isConfirm = confirm("Game Over! Your score: " + this.score + " Do u want try again?!");
+    if (isConfirm) {
+      this.score = 0;
+      this.x = Math.floor(Math.random() * 500);
+      this.y = Math.floor(Math.random() * 500);
+      this.dx = 3;
+      this.dy = 3;
+      this.countScore = setInterval(() => {
+        this.score++;
+      }, 3000);
+    }
   }
 }
